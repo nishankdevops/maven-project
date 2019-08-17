@@ -1,5 +1,7 @@
-Hello, World!
-This is for CI test Add/Commit/Push Now
+Hello, World!<br>
+
+This is for CI test Add/Commit/Push Now <br>
+
 Option 3 Build when check-in
 2nd trial
 
