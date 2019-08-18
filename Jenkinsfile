@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        jdk 'Java8'
+        maven 'Maven3'
+    }
     stages {
         stage ('First Level'){
             steps {
