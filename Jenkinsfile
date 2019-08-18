@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        jdk 'Java8'
-        maven 'Maven3'
+        jdk 'JDK12.0.2'
+        maven 'Maven3.6.1'
     }
     stages {
         stage ('First Level'){
@@ -28,13 +28,13 @@ pipeline {
         stage ('Deploy'){
             
             steps {
-                timeout(time: 45, unit: 'SECONDS') {
- input message: 'Can you wait?', ok: 'Yes I will'
-}
+//                 timeout(time: 45, unit: 'SECONDS') {
+//  input message: 'Can you wait?', ok: 'Yes I will'
+// }
                 
                 echo "This is Deployment phase"
                 archiveArtifacts '**/webapp.war'
-                build 'Deployment Job'
+                // build 'Deployment Job'
             }           
         }
     }
