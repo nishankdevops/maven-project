@@ -17,7 +17,7 @@ pipeline {
                 sh label: '', script: 'mvn clean package checkstyle:checkstyle'
                     echo "CheckStyle Results Graph"
                 checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
-            }
+                } 
             post {
                 success {
          echo "Test Result Trend"
@@ -27,6 +27,9 @@ pipeline {
         }
         stage ('Deploy'){
             steps {
+                timeout(time: 45, unit: 'SECONDS') {
+    // some block
+}
                 echo "This is Deployment phase"
                 archiveArtifacts '**/webapp.war'
                 build 'Deployment Job'
