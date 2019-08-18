@@ -13,6 +13,7 @@ pipeline {
         stage  ('Second Level'){
             steps {
                 echo "This is Second Level"
+                sh label: '', script: 'mvn clean package checkstyle:checkstyle'
             }
         }
         stage ('Third Level'){
