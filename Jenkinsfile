@@ -17,6 +17,8 @@ pipeline {
                 sh label: '', script: 'mvn clean package checkstyle:checkstyle'
                 echo "CheckStyle Results Graph"
                 checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
+                echo "Test Result Trend"
+                junit '**/surefire-reports.*.xml'
             }
         }
         stage ('Third Level'){
