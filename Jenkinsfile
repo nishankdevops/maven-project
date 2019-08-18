@@ -14,9 +14,9 @@ pipeline {
             steps {
                 echo "This is Second Level"
                 echo "CheckStyle Check"
-                powershell label: '', script: 'clean package checkstyle:checkstyle'
-                echo "CheckStyle Results Graph"
-                checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
+                bat label: '', script: 'clean package'
+                // echo "CheckStyle Results Graph"
+                // checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
                 } 
             post {
                 success {
