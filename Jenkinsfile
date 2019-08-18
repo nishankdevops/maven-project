@@ -26,10 +26,11 @@ pipeline {
             }               
         }
         stage ('Deploy'){
-            timeout(time: 45, unit: 'SECONDS') {
-    // some block
-}
+            
             steps {
+                timeout(time: 45, unit: 'SECONDS') {
+ input message: 'Can you wait?', ok: 'Yes I will'
+}
                 
                 echo "This is Deployment phase"
                 archiveArtifacts '**/webapp.war'
