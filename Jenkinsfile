@@ -13,7 +13,10 @@ pipeline {
         stage  ('Second Level'){
             steps {
                 echo "This is Second Level"
+                echo "CheckStyle Check"
                 sh label: '', script: 'mvn clean package checkstyle:checkstyle'
+                echo "CheckStyle Results Graph"
+                checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
             }
         }
         stage ('Third Level'){
