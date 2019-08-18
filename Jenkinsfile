@@ -15,10 +15,11 @@ pipeline {
                 echo "This is Second Level"
                 echo "CheckStyle Check"
                 sh label: '', script: 'mvn clean package checkstyle:checkstyle'
+                   echo "Test Result Trend"
+                junit '**/surefire-reports/*.xml'
                 echo "CheckStyle Results Graph"
                 checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
-                echo "Test Result Trend"
-                junit '**/surefire-reports/*.xml'
+             
             }
         }
         stage ('Third Level'){
