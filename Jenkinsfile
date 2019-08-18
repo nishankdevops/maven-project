@@ -26,10 +26,11 @@ pipeline {
             }               
         }
         stage ('Deploy'){
-            steps {
-                timeout(time: 45, unit: 'SECONDS') {
+            timeout(time: 45, unit: 'SECONDS') {
     // some block
 }
+            steps {
+                
                 echo "This is Deployment phase"
                 archiveArtifacts '**/webapp.war'
                 build 'Deployment Job'
