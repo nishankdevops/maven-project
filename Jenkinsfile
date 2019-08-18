@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo "This is Second Level"
                 echo "CheckStyle Check"
-                powershell label: '', script: 'mvn clean package checkstyle:checkstyle'
+                powershell label: '', script: 'clean package checkstyle:checkstyle'
                 echo "CheckStyle Results Graph"
                 checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
                 } 
@@ -33,7 +33,7 @@ pipeline {
 // }
                 
                 echo "This is Deployment phase"
-               // archiveArtifacts '**/webapp.war'
+                archiveArtifacts '**/webapp.war'
                 // build 'Deployment Job'
             }           
         }
